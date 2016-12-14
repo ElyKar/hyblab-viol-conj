@@ -1,1 +1,120 @@
-Hello, World !
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <meta name="description" content="Nos amis les koalas">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=890, minimal-ui">
+    <link rel="icon" href="./img/favicon.ico">
+    <title>Koalas</title>
+    <script src="./assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <body >
+        <div id="content">
+        </div>
+    </body>
+    <script>
+
+        function render(tag) {
+            // Render background
+            panel = data[tag];
+            $("html").css("background-image", "url('"+panel.background.content+"')");
+
+            // Render elements
+
+            // Flush previous elements
+            $("#content").html("");
+
+            panel.elements.forEach(function(element) {
+                switch(element.type) {
+                    case "Text":
+                        var div = $("<div></div>").text(element.content);
+                        div.css("position", "absolute");
+                        div.css("width", "100%");
+                        div.css("height", "100%");
+                        if ("positionX" in element) { div.css("left", element.positionX) }
+                        if ("positionY" in element) { div.css("top", element.positionY) }
+                        if ("width" in element) { div.css("width", element.width) }
+                        if ("height" in element) { div.css("height", element.height) }
+                        if ("classes" in element) { div.addClass(element.classes) }
+                        if ("styles" in element) { div.css(styles) }
+                        if ("size" in element) { div.css("font-size", element.size) }
+                        if ("alignment" in element) { div.css("text-align", "center") }
+                        $("#content").append(div);
+                        break;
+                    case "Image":
+                        var div = $("<img></img>");
+                        div.css("position", "absolute");
+                        div.attr("src", element.src);
+                        if ("positionX" in element) { div.css("left", element.positionX) }
+                        if ("positionY" in element) { div.css("top", element.positionY) }
+                        div.attr("height", element.height)
+                        div.attr("width", element.width)
+                        if ("classes" in element) { div.addClass(element.classes) }
+                        if ("styles" in element) { div.css(styles) }
+                        $("#content").append(div);
+                        break;
+                    case "Button":
+                        var div = $("<div class='btn'></div>").text(element.content);
+
+                        div.css("position", "absolute");
+                        div.attr("src", element.src);
+                        if ("positionX" in element) { div.css("left", element.positionX) }
+                        if ("positionY" in element) { div.css("top", element.positionY) }
+                        div.css("height", element.height)
+                        div.css("width", element.width)
+                        if ("classes" in element) { div.addClass(element.classes) }
+                        if ("size" in element) { div.css("font-size", element.size) }
+                        if ("styles" in element) { div.css(styles) }
+                        var target = element.target;
+                        switch (target.type) {
+                            case "Simple":
+                                div.click(function() { render(target.content) });
+                        }
+
+                        $("#content").append(div);
+                        break;
+                }
+            });
+        }
+
+        function appendIfPresent(dom, element, propSeeked, propWanted) {
+            if (propSeeked in element) {
+                dom.css(propWanted, element.propSeeked);
+            }
+        }
+
+
+
+        data={ "begin": { "background": { "content": "img/bg-1.jpg" },
+                          "elements": [
+                            { type: "Text", alignment: "center", size: "16pt", content: "Les Koalas sont nos amis pour la vie", positionX: "38%", positionY: "70%", width: "24%", height: "10%", classes: "text bg" },
+                            { type: "Image", positionX: "60%", positionY: "30%", width: "150px", height: "100px", src: "./img/koala2.jpg" },
+                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers" } }
+                            ]
+                        },
+              "fingers": { "background": { "content": "img/bg-1.jpg" },
+                          "elements": [
+                            { type: "Text", alignment: "center", size: "16pt", content: "Question 1", positionX: "40%", positionY: "10%", width: "20%", height: "6%", classes: "text bg" },
+                            { type: "Text", alignment: "center", size: "16pt", content: "Combien les koalas ont-ils de pouces ?", positionX: "33%", positionY: "70%", width: "34%", height: "6%", classes: "text bg" },
+                            { type: "Button", content: "1", positionX: "40%", positionY: "81%", width: "30px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-ok" } },
+                            { type: "Button", content: "2", positionX: "60%", positionY: "81%", width: "30px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-ko" } }
+                            ]
+                        },
+            "fingers-ok": { "background": { "content": "img/bg-1.jpg" },
+                          "elements": [
+                            { type: "Text", alignment: "center", size: "26pt", content: "Gagné !!!", positionX: "38%", positionY: "40%", width: "24%", height: "9%", classes: "text bg" },
+                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "end" } }
+                            ]
+                        },
+            "fingers-ko": { "background": { "content": "img/bg-1.jpg" },
+                          "elements": [
+                            { type: "Text", alignment: "center", size: "26pt", content: "Perdu !!!", positionX: "38%", positionY: "40%", width: "24%", height: "9%", classes: "text bg" },
+                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "end" } }
+                            ]
+                        },
+            };
+
+        $(function() {
+            render("begin");
+        });
+
+    </script>
+</html>
