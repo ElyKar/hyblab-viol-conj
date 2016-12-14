@@ -8,20 +8,23 @@ body {
     height: 100%;
 }
 
-html {
+p {
+    padding: 5px;
 }
 
 .text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #222;
 }
 
-.bg {
-    background-color: rgba(200,200,200,0.5);
-    border-radius: 5px;
+.vert-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.bg {
+    background-color: rgba(200,200,200,0.8);
+    border-radius: 5px;
 }
 
 .btn {

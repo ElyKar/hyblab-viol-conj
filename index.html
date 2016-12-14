@@ -26,6 +26,10 @@
                 $("body").css("background-image", "url('"+panel.background.content+"')");
             }
 
+            if ("styles" in panel.background) {
+                $("body").css(panel.background.styles);
+            }
+
 
             // Render elements
 
@@ -35,7 +39,7 @@
             panel.elements.forEach(function(element) {
                 switch(element.type) {
                     case "Text":
-                        var div = $("<div></div>");
+                        var div = $("<p></p>");
                         if (element.content) { div.text(element.content)}
                         div.css("position", "absolute");
                         div.css("width", "100%");
@@ -46,7 +50,7 @@
                         if ("height" in element) { div.css("height", element.height) }
                         if ("classes" in element) { div.addClass(element.classes) }
                         if ("ids" in element) { div.attr("id", element.ids) }
-                        if ("styles" in element) { div.css(styles) }
+                        if ("styles" in element) { div.css(element.styles) }
                         if ("size" in element) { div.css("font-size", element.size) }
                         if ("alignment" in element) { div.css("text-align", "center") }
                         $("#content").append(div);
@@ -61,7 +65,7 @@
                         div.attr("width", element.width)
                         if ("classes" in element) { div.addClass(element.classes) }
                         if ("ids" in element) { div.attr("id", element.ids) }
-                        if ("styles" in element) { div.css(styles) }
+                        if ("styles" in element) { div.css(element.styles) }
                         $("#content").append(div);
                         break;
                     case "Button":
@@ -76,7 +80,7 @@
                         if ("classes" in element) { div.addClass(element.classes) }
                         if ("ids" in element) { div.attr("id", element.ids) }
                         if ("size" in element) { div.css("font-size", element.size) }
-                        if ("styles" in element) { div.css(styles) }
+                        if ("styles" in element) { div.css(element.styles) }
                         var target = element.target;
 
                         var next = "";
@@ -114,49 +118,37 @@
             });
         }
 
-        data={ "begin": { "background": { "content": "img/bg-1.jpg" },
-                          "elements": [
-                            { type: "Text", alignment: "center", ids: "typed", size: "16pt", content: "Les koalas sont nos amis", positionX: "38%", positionY: "60%", width: "24%", height: "20%", classes: "text bg" },
-                            { type: "Image", positionX: "60%", positionY: "30%", width: "150px", height: "100px", src: "./img/koala2.jpg" },
-                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Random", content: ["fingers", "end"] } }
-                            ]
-                        },
-              "fingers": { "background": { "content": "img/bg-1.jpg" },
-                          "elements": [
-                            { type: "Text", alignment: "center", size: "16pt", content: "Question", positionX: "40%", positionY: "10%", width: "20%", height: "6%", classes: "text bg" },
-                            { type: "Text", alignment: "center", size: "16pt", content: "Combien les koalas ont-ils de pouces ?", positionX: "33%", positionY: "70%", width: "34%", height: "6%", classes: "text bg" },
-                            { type: "Button", content: "1", positionX: "40%", positionY: "81%", width: "30px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-ko" } },
-                            { type: "Button", content: "2", positionX: "60%", positionY: "81%", width: "30px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-ok" } }
-                            ]
-                        },
-            "fingers-ok": { "background": { "content": "img/bg-1.jpg" },
-                          "elements": [
-                            { type: "Text", alignment: "center", size: "26pt", content: "Gagné !!!", positionX: "38%", positionY: "40%", width: "24%", height: "9%", classes: "text bg" },
-                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-explanation" } }
-                            ]
-                        },
-            "fingers-ko": { "background": { "content": "img/bg-1.jpg" },
-                          "elements": [
-                            { type: "Text", alignment: "center", size: "26pt", content: "Perdu !!!", positionX: "38%", positionY: "40%", width: "24%", height: "9%", classes: "text bg" },
-                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-explanation" } }
-                            ]
-                        },
-            "fingers-explanation": { "background": { "content": "img/bg-1.jpg" },
-                          "elements": [
-                          { type: "Text", alignment: "center", size: "16t", content: "Les koalas ont deux pouces opposables sur la main,\net un seul sur le pied", positionX: "25%", positionY: "20%", width: "50%", height: "10%", size: "18pt", classes: "txt bg" },
-                          { type: "Image", positionX: "34%", positionY: "40%", width: "32%", height: "45%", src: "./img/koala-thumbs.jpg" },
-                          { type: "Button", content: "Fin", positionX: "46%", positionY: "88%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", effect: "fade" ,content: "end" } }
-            ]},
-            "end": { "background": { "content": "img/bg-1.jpg" },
-                          "elements": [
-                          { type: "Text", alignment: "center", size: "19t", content: "Merci d'avoir participé !", positionX: "25%", positionY: "40%", width: "50%", height: "6%", size: "18pt", classes: "txt bg" }
+        var data = {   "panel-1-1": {
+            "background": { "content": "img/carterennes.png" },
+                            "elements": [
+                            { type: "Text", ids: "typed", alignment: "left", size: "18pt", content: "", positionX: "29%", positionY: "30%", width: "40%", height: "40%", classes: "text bg", styles: {"margin-left": "5px", "margin-right": "5px" } },
+                                                                        { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "panel-1-2" } },
+                                                                        {type: "Custom", fn: function() { $("#typed").typed({strings: ["J’avais hésité à venir à cette soirée. Je venais d’arriver à Rennes pour ma première année aux Beaux Arts. Je viens de Saint-Malo, mes amis sont restés là-bas, mes parents aussi. À Rennes, je ne connaissais personne, j’avais besoin de rencontrer du monde."], typeSpeed: 0})}}
+                                        ]
+        },
+      "panel-1-2": {
+         "background": { "content": "img/carterennes.png" },
+        "elements": [
+                    { type: "Text", ids: "typed", alignment: "center", size: "18pt", content: "", positionX: "29%", positionY: "15%", width: "40%", height: "55%", classes: "text bg" },
 
-                          ]
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "panel-1-3" } },
+         { type: "Custom", fn: function() { $("#typed").typed({strings: ["Tu étais dans un coin, tu buvais un verre avec tes amis, dans un échange plein de vie. Tu riais. On avait dix-neuf ans, on s’est abordé, tourné autour et assez rapidement on est tombés amoureux. On aimait les mêmes choses, la même musique. Tu t’intéressais à ma vie et moi à la tienne. Nos échanges étaient souvent passionnés, on parlait jusqu’à tard dans la nuit. Tout s’est passé très vite, on a vite eu envie de se voir toujours plus."], typeSpeed: 0 })}}
+                    ]
+                },
+
+    "panel-1-3": {
+         "background": { "content": "img/carterennes.png" },
+        "elements": [
+                    { type: "Text", alignment: "center", ids: "typed", size: "18pt", content: "", positionX: "29%", positionY: "25%", width: "40%", height: "45%", classes: "text bg" },
+
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "panel-1-4" } },
+         { type: "Custom", fn: function() { $("#typed").typed({strings: ["Mais on fait attention, on veut garder notre indépendance. On se voit quelques jours par semaine, un coup chez toi, un coup chez moi. Je fais des soirées avec mes amis pendant que tu vois les tiens. Comme tous les couples, les soirées de Binge Watching se multiplient, on a arrêté les séries qu’on regardait de notre côté et on a choisi celles qui nous plaisaient à nous deux."], typeSpeed: 0})}}
+                    ]
                 }
-            };
+        }
 
         $(function() {
-            render("begin");
+            render("panel-1-1");
         });
 
     </script>
