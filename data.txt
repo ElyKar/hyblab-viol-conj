@@ -1,0 +1,46 @@
+{   "begin": {
+        "background": { "content": "img/bg-1.jpg" },
+        "elements": [
+                    { type: "Text", alignment: "center", size: "16pt", content: "Les Koalas sont nos amis pour la vie", positionX: "38%", positionY: "60%", width: "24%", height: "20%", classes: "text bg" },
+                    { type: "Image", positionX: "60%", positionY: "30%", width: "150px", height: "100px", src: "./img/koala2.jpg" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers" } }
+                    ]
+                },
+      "fingers": {
+          "background": { "content": "img/bg-1.jpg" },
+          "elements": [
+                    { type: "Text", alignment: "center", size: "16pt", content: "Question", positionX: "40%", positionY: "10%", width: "20%", height: "6%", classes: "text bg" },
+                    { type: "Text", alignment: "center", size: "16pt", content: "Combien les koalas ont-ils de pouces ?", positionX: "33%", positionY: "70%", width: "34%", height: "6%", classes: "text bg" },
+                    { type: "Button", content: "1", positionX: "40%", positionY: "81%", width: "30px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-ko" } },
+                    { type: "Button", content: "2", positionX: "60%", positionY: "81%", width: "30px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-ok" } }
+                    ]
+                },
+    "fingers-ok": {
+        "background": { "content": "img/bg-1.jpg" },
+        "elements": [
+                    { type: "Text", alignment: "center", size: "26pt", content: "Gagné !!!", positionX: "38%", positionY: "40%", width: "24%", height: "9%", classes: "text bg" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-explanation" } }
+                    ]
+                },
+    "fingers-ko": {
+        "background": { "content": "img/bg-1.jpg" },
+        "elements": [
+                    { type: "Text", alignment: "center", size: "26pt", content: "Perdu !!!", positionX: "38%", positionY: "40%", width: "24%", height: "9%", classes: "text bg" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers-explanation" } }
+                    ]
+                },
+    "fingers-explanation": {
+        "background": { "content": "img/bg-1.jpg" },
+        "elements": [
+                  { type: "Text", alignment: "center", size: "16t", content: "Les koalas ont deux pouces opposables sur la main,\net un seul sur le pied", positionX: "25%", positionY: "20%", width: "50%", height: "10%", size: "18pt", classes: "txt bg" },
+                  { type: "Image", positionX: "34%", positionY: "40%", width: "32%", height: "45%", src: "./img/koala-thumbs.jpg" },
+                  { type: "Button", content: "Fin", positionX: "46%", positionY: "88%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "end" } }
+    ]},
+    "end": {
+        "background": { "content": "img/bg-1.jpg" },
+        "elements": [
+                  { type: "Text", alignment: "center", size: "19t", content: "Merci d'avoir participé !", positionX: "25%", positionY: "40%", width: "50%", height: "6%", size: "18pt", classes: "txt bg" }
+
+                  ]
+        }
+    };
