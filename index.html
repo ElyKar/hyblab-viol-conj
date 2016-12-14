@@ -78,21 +78,31 @@
                         if ("size" in element) { div.css("font-size", element.size) }
                         if ("styles" in element) { div.css(styles) }
                         var target = element.target;
-                        var fn = function() { render(target.content) };
+
+                        var next = "";
+                        switch (target.type) {
+                            case "Simple":
+                                next = target.content;
+                                break;
+                            case "Random":
+                                var rnd = Math.floor(Math.random() * target.content.length);
+                                next = target.content[rnd];
+                                break;
+                        }
+
                         if ("effect" in target && target.effect == "fade") {
                             fn = function() {
                                 fade = true;
                                 $("html").css("opacity", 0);
-                                render(target.content);
+                                render(next);
                                 $("html").fadeTo('slow', 1);
                                 fade = false;
                             }
+                        } else {
+                            fn = function() { render(next) };
                         }
 
-                        switch (target.type) {
-                            case "Simple":
-                                div.click(fn);
-                        }
+                        div.click(fn);
 
                         $("#content").append(div);
                         break;
@@ -108,7 +118,7 @@
                           "elements": [
                             { type: "Text", alignment: "center", ids: "typed", size: "16pt", content: "Les koalas sont nos amis", positionX: "38%", positionY: "60%", width: "24%", height: "20%", classes: "text bg" },
                             { type: "Image", positionX: "60%", positionY: "30%", width: "150px", height: "100px", src: "./img/koala2.jpg" },
-                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers" } }
+                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Random", content: ["fingers", "end"] } }
                             ]
                         },
               "fingers": { "background": { "content": "img/bg-1.jpg" },
