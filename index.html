@@ -6,6 +6,7 @@
     <title>Koalas</title>
     <script src="./assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="./assets/js/typed.js" type="text/javascript"></script>
+    <script src="./assets/js/background-blur.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <body >
         <div id="content">
@@ -18,11 +19,11 @@
             // Render background
             panel = data[tag];
             if (fade) {
-                $("html").fadeTo('slow', 0.3, function() {
-                    $("html").css("background-image", "url('"+panel.background.content+"')");
+                $("body").fadeTo('slow', 0.3, function() {
+                    $("body").css("background-image", "url('"+panel.background.content+"')");
                 }).fadeTo("slow", 1);
             } else {
-                $("html").css("background-image", "url('"+panel.background.content+"')");
+                $("body").css("background-image", "url('"+panel.background.content+"')");
             }
 
 
@@ -105,10 +106,9 @@
 
         data={ "begin": { "background": { "content": "img/bg-1.jpg" },
                           "elements": [
-                            { type: "Text", alignment: "center", ids: "typed", size: "16pt", content: "", positionX: "38%", positionY: "60%", width: "24%", height: "20%", classes: "text bg" },
+                            { type: "Text", alignment: "center", ids: "typed", size: "16pt", content: "Les koalas sont nos amis", positionX: "38%", positionY: "60%", width: "24%", height: "20%", classes: "text bg" },
                             { type: "Image", positionX: "60%", positionY: "30%", width: "150px", height: "100px", src: "./img/koala2.jpg" },
-                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers" } },
-                            { type: "Custom", fn: function() { $("#typed").typed({strings: ["Les koalas sont nos amis"], typeSpeed: 10}) } }
+                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers" } }
                             ]
                         },
               "fingers": { "background": { "content": "img/bg-1.jpg" },
