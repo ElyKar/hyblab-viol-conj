@@ -5,6 +5,7 @@
     <link rel="icon" href="./img/favicon.ico">
     <title>Koalas</title>
     <script src="./assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="./assets/js/typed.js" type="text/javascript"></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <body >
         <div id="content">
@@ -33,7 +34,8 @@
             panel.elements.forEach(function(element) {
                 switch(element.type) {
                     case "Text":
-                        var div = $("<div></div>").text(element.content);
+                        var div = $("<div></div>");
+                        if (element.content) { div.text(element.content)}
                         div.css("position", "absolute");
                         div.css("width", "100%");
                         div.css("height", "100%");
@@ -42,6 +44,7 @@
                         if ("width" in element) { div.css("width", element.width) }
                         if ("height" in element) { div.css("height", element.height) }
                         if ("classes" in element) { div.addClass(element.classes) }
+                        if ("ids" in element) { div.attr("id", element.ids) }
                         if ("styles" in element) { div.css(styles) }
                         if ("size" in element) { div.css("font-size", element.size) }
                         if ("alignment" in element) { div.css("text-align", "center") }
@@ -56,6 +59,7 @@
                         div.attr("height", element.height)
                         div.attr("width", element.width)
                         if ("classes" in element) { div.addClass(element.classes) }
+                        if ("ids" in element) { div.attr("id", element.ids) }
                         if ("styles" in element) { div.css(styles) }
                         $("#content").append(div);
                         break;
@@ -69,6 +73,7 @@
                         div.css("height", element.height)
                         div.css("width", element.width)
                         if ("classes" in element) { div.addClass(element.classes) }
+                        if ("ids" in element) { div.attr("id", element.ids) }
                         if ("size" in element) { div.css("font-size", element.size) }
                         if ("styles" in element) { div.css(styles) }
                         var target = element.target;
@@ -90,21 +95,20 @@
 
                         $("#content").append(div);
                         break;
+                    case "Custom":
+                        element.fn();
+                        break;
+
                 }
             });
         }
 
-        function appendIfPresent(dom, element, propSeeked, propWanted) {
-            if (propSeeked in element) {
-                dom.css(propWanted, element.propSeeked);
-            }
-        }
-
         data={ "begin": { "background": { "content": "img/bg-1.jpg" },
                           "elements": [
-                            { type: "Text", alignment: "center", size: "16pt", content: "Les Koalas sont nos amis pour la vie", positionX: "38%", positionY: "60%", width: "24%", height: "20%", classes: "text bg" },
+                            { type: "Text", alignment: "center", ids: "typed", size: "16pt", content: "", positionX: "38%", positionY: "60%", width: "24%", height: "20%", classes: "text bg" },
                             { type: "Image", positionX: "60%", positionY: "30%", width: "150px", height: "100px", src: "./img/koala2.jpg" },
-                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers" } }
+                            { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "fingers" } },
+                            { type: "Custom", fn: function() { $("#typed").typed({strings: ["Les koalas sont nos amis"], typeSpeed: 10, onCharTyped: function() {alert("typed")}}) } }
                             ]
                         },
               "fingers": { "background": { "content": "img/bg-1.jpg" },
