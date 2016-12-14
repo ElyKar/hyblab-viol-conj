@@ -13,6 +13,9 @@ html {
 }
 
 .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #222;
 }
 
