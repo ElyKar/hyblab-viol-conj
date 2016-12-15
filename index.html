@@ -3,12 +3,13 @@
     <meta name="description" content="Nos amis les koalas">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=890, minimal-ui">
     <link rel="icon" href="./img/favicon.ico">
-    <title>Koalas</title>
+    <title>Une histoire d'amour</title>
     <script src="./assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="./assets/js/typed.js" type="text/javascript"></script>
     <script src="./assets/js/background-blur.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <body >
+		<img id="background" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%"></img>
         <div id="content">
         </div>
     </body>
@@ -154,59 +155,95 @@
             "accueil": {
                 "background": { "content": "./img/scaccueil.jpg" },
                 "elements": [
-                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", effect: "fade", content: "city-1" } }
+                    { type: "Button", content: "Commencer", positionX: "42%", positionY: "81%", width: "16%", height: "30px", size: "18pt", classes: "home-btn",  target: {type: "Simple", effect: "fade", content: "city-1" } }
                 ]
             },
             "city-1": {
                 "background": { "content": "./img/carterennes.png" },
-                // NARRATION ICI
                 "elements": [
-                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "bar-1", effect: "fade" } }
+                    { type: "Button", content: "Suite", positionX: "42%", positionY: "81%", width: "16%", height: "30px", classes: "city-btn", size: "18pt", target: {type: "Simple", content: "city-2" } },
+                    {type: "Text", content: "", positionX: "15%", positionY: "15%", width: "30%", height: "40%", classes: "text bg city-txt", ids: "typed"},
+                    {type: "Custom", fn: function() {
+                        $("#typed").typed({strings: ["J’avais hésité à venir à cette soirée.\nJe venais d’arriver à Rennes pour ma première année aux Beaux Arts. Je viens de Saint-Malo, mes amis sont restés là-bas, mes parents aussi.\nÀ Rennes, je ne connaissais personne, j’avais besoin de rencontrer du monde..."], typeSpeed: 15});
+                                                    }
+                    }
+                ]
+            },
+            "city-2": {
+                "background": { "content": "./img/carterennes.png" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "42%", positionY: "81%", width: "16%", height: "30px", classes: "city-btn", size: "18pt", target: {type: "Simple", content: "city-3" } },
+                    {type: "Text", content: "", positionX: "15%", positionY: "10%", width: "30%", height: "55%", classes: "text bg city-txt", ids: "typed"},
+                    {type: "Custom", fn: function() {
+                        $("#typed").typed({strings: ["Tu étais dans un coin, tu buvais un verre avec tes amis, dans un échange plein de vie. Tu riais. On avait dix-neuf ans, on s’est abordé, tourné autour et assez rapidement on est tombés amoureux. On aimait les mêmes choses, la même musique. Tu t’intéressais à ma vie et moi à la tienne. Nos échanges étaient souvent passionnés, on parlait jusqu’à tard dans la nuit. Tout s’est passé très vite, on a vite eu envie de se voir toujours plus."], typeSpeed: 15});
+                                                    }
+                    }
+                ]
+            },
+            "city-3": {
+                "background": { "content": "./img/carterennes.png" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "42%", positionY: "81%", width: "16%", height: "30px", classes: "city-btn", size: "18pt", target: {type: "Simple", content: "bar-1", effect: "fade" } },
+                    {type: "Text", content: "", positionX: "15%", positionY: "10%", width: "30%", height: "50%", classes: "text bg city-txt", ids: "typed"},
+                    {type: "Custom", fn: function() {
+                        $("#typed").typed({strings: ["Mais on fait attention, on veut garder notre indépendance. On se voit quelques jours par semaine, un coup chez toi, un coup chez moi. Je fais des soirées avec mes amis pendant que tu vois les tiens. Comme tous les couples, les soirées de Binge Watching se multiplient, on a arrêté les séries qu’on regardait de notre côté et on a choisi celles qui nous plaisaient à nous deux."], typeSpeed: 15});
+                                                    }
+                    }
                 ]
             },
             "bar-1": {
                 "background": { "content": "./img/fondsc2.jpg" },
                 "elements": [
-                    { type: "Button", content: "GOT", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "bar-got" } },
-                    { type: "Button", content: "PuB", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "bar-pub" } }
+                    { type: "Text", content: "- Qu'est ce que tu veux qu'on fasse ce soir ?", positionX: "55%", positionY: "15%", width: "35%", height: "30px", classes: "text bg bar-txt" },
+                    { type: "Button", content: "Il y a une soirée de promo organisée au pub Gabriel, on y va ensemble ?", positionX: "5%", positionY: "52%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "bar-got" } },
+                    { type: "Button", content: "On peut mater le dernier épisode de GoT chez moi.", positionX: "5%", positionY: "70%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "bar-got" } },
                 ]
             },
             "bar-got": {
                 "background": { "content": "./img/fondsc2.jpg" },
                 "elements": [
-                    { type: "Button", content: "Rep1", positionX: "25%", positionY: "61%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } },
-                    { type: "Button", content: "Rep2", positionX: "25%", positionY: "76%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } }
+                { type: "Text", content: "Camille me dit que ça lui va et qu’il a hâte de passer cette soirée avec moi.", positionX: "55%", positionY: "15%", width: "35%", height: "10%", styles: {"font-style": "italic" }, classes: "text bg bar-txt" },
+                    { type: "Button", content: "On peut manger ensemble avant si tu veux si tu n’as rien d’autre de prévu.", positionX: "5%", positionY: "52%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "parc-1", effect: "fade" } },
+                    { type: "Button", content: "On peut dormir ensemble si tu veux.", positionX: "5%", positionY: "70%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "parc-1", effect: "fade" } },
                 ]
             },
             "bar-pub": {
                 "background": { "content": "./img/fondsc2.jpg" },
                 "elements": [
-                    { type: "Button", content: "Rep1", positionX: "25%", positionY: "61%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } },
-                    { type: "Button", content: "Rep2", positionX: "25%", positionY: "76%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } }
+                { type: "Text", content: "Camille me dit que ça lui va et qu’il a hâte de passer cette soirée avec moi.", positionX: "55%", positionY: "15%", width: "35%", height: "10%", styles: {"font-style": "italic" }, classes: "text bg bar-txt" },
+                    { type: "Button", content: "On peut manger ensemble avant si tu veux si tu n’as rien d’autre de prévu.", positionX: "5%", positionY: "52%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "parc-1", effect: "fade" } },
+                    { type: "Button", content: "On peut dormir ensemble si tu veux.", positionX: "5%", positionY: "70%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "parc-1", effect: "fade" } },
                 ]
             },
             "parc-1": {
                 "background": { "content": "./img/parc.jpg" },
                 "elements": [
-                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "parc-2"} }
+                { type: "Text", content: "- Il y aura qui à ta soirée ?", positionX: "30%", positionY: "15%", width: "35%", height: "30px", classes: "text bg parc-txt" },
+                { type: "Text", content: "- Bah, tu sais un peu tout le groupe du lycée : Lena, Selim, Raphaël, Julien et les jumelles.", positionX: "30%", positionY: "28%", width: "35%", height: "10%", classes: "text bg parc-txt" },
+                { type: "Text", content: "- Il n'y aura pas ton ex ?", positionX: "30%", positionY: "46%", width: "35%", height: "30px", classes: "text bg parc-txt" },
+                { type: "Text", content: "- Non je ne pense pas.", positionX: "30%", positionY: "60%", width: "35%", height: "30px", classes: "text bg parc-txt" },
+                    { type: "Button", classes: "parc-btn", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "parc-2"} }
                 ]
             },
             "parc-2": {
                 "background": { "content": "./img/parc.jpg" },
                 "elements": [
-                    { type: "Button", content: "Rep1", positionX: "25%", positionY: "61%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-rep1"} },
-                    { type: "Button", content: "Rep2", positionX: "25%", positionY: "76%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-rep2"} }
+                { type: "Text", content: "Ok... Tu t'habilles comment ?", positionX: "30%", positionY: "7%", width: "35%", height: "10%", classes: "text bg parc-txt vert-align" },
+                    { type: "Button", classes: "parc-btn vert-align", content: "Je pense que je vais mettre la jolie chemise que j'ai acheté hier.", positionX: "25%", positionY: "61%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-rep1"} },
+                    { type: "Button", classes: "parc-btn vert-align", content: "Ben j'y vais comme ça, je ne me change pas.", positionX: "25%", positionY: "76%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-rep2"} }
                 ]
             },
             "parc-rep1": {
                 "background": { "content": "./img/parc.jpg" },
                 "elements": [
+                { type: "Text", content: "Camille n'apprécie pas que je m'apprête, de peur que je me fasse draguer.", styles: {"font-style": "italic"}, positionX: "30%", positionY: "7%", width: "35%", height: "10%", classes: "text bg parc-txt vert-align" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-1", effect: "fade" } }
                 ]
             },
             "parc-rep2": {
                 "background": { "content": "./img/parc.jpg" },
                 "elements": [
+                { type: "Text", content: "- Ok, c'est bien c'est pas trop sexy.", positionX: "30%", positionY: "7%", width: "35%", height: "10%", classes: "text bg parc-txt vert-align" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-1", effect: "fade" } }
                 ]
             },
@@ -272,7 +309,7 @@
         }
 
         $(function() {
-            render("panel-1-1");
+            render("parc-1");
         });
 
     </script>

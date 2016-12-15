@@ -9,7 +9,7 @@ body {
 }
 
 p {
-    padding: 5px;
+    padding: 15px;
 }
 
 .text {
@@ -44,4 +44,20 @@ p {
     position: fixed;
     left: 0;
     top: 0;
+}
+
+.city-txt {
+    font-size: 16pt;
+}
+
+.bar-txt {
+    font-size: 16pt;
+}
+
+.bar-btn {
+    font-size: 14pt;
+}
+
+.parc-txt {
+    font-size: 16pt;
 }
