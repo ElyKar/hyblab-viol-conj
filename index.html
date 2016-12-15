@@ -184,7 +184,7 @@
             "bar-got": {
                 "background": { "content": "./img/fondsc2.jpg" },
                 "elements": [
-                { type: "Text", content: "Camille me dit que ça lui va et qu’il a hâte de passer cette soirée avec moi.", positionX: "55%", positionY: "15%", width: "35%", height: "10%", styles: {"font-style": "italic" }, classes: "text bg bar-txt" },
+                { type: "Text", content: "Camille me dit que ça lui va et qu’il a hâte de passer cette soirée avec moi.", positionX: "55%", positionY: "15%", width: "35%", height: "10%", classes: "text bg bar-txt" },
                     { type: "Button", content: "On peut manger ensemble avant, si tu n’as rien d’autre de prévu.", positionX: "5%", positionY: "52%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "parc-1", effect: "fade" } },
                     { type: "Button", content: "On peut dormir ensemble, si tu veux.", positionX: "5%", positionY: "70%", width: "30%", height: "10%", classes: "vert-align bar-btn", target: {type: "Simple", content: "parc-1", effect: "fade" } },
                 ]
@@ -200,10 +200,9 @@
             "parc-1": {
                 "background": { "content": "./img/parc.jpg" },
                 "elements": [
-                { type: "Text", content: "Camille : Il y aura qui à ta soirée ?", positionX: "30%", positionY: "15%", width: "35%", height: "30px", classes: "text bg parc-txt" },
-                { type: "Text", content: "Alex : Bah... Tu sais, un peu tout le groupe du lycée : Lena, Selim, Raphaël, Julien et les jumelles.", positionX: "30%", positionY: "28%", width: "35%", height: "10%", classes: "text bg parc-txt" },
-                { type: "Text", content: "Camille : Il n'y aura pas ton ex ?", positionX: "30%", positionY: "46%", width: "35%", height: "30px", classes: "text bg parc-txt" },
-                { type: "Text", content: "Alex : Non... Je ne pense pas.", positionX: "30%", positionY: "60%", width: "35%", height: "30px", classes: "text bg parc-txt" },
+                { type: "Text", content: "Alex annonce sa soirée à Camille. <br/><br/> Camille : Il y aura qui à ta soirée ? <br/> Alex : Bah... Tu sais, un peu tout le groupe du lycée : Lena, Selim, Raphaël, Julien et les jumelles. <br/> Camille : Il n'y aura pas ton ex ? <br/> Alex : Non... Je ne pense pas. ", positionX: "30%", positionY: "15%", width: "35%", height: "50%", classes: "text bg parc-txt" },
+
+
                     { type: "Button", classes: "parc-btn", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "parc-2"} }
                 ]
             },
@@ -218,7 +217,7 @@
             "parc-rep1": {
                 "background": { "content": "./img/parc.jpg" },
                 "elements": [
-                { type: "Text", content: "Camille n'apprécie pas que je m'apprête, de peur que je me fasse draguer.", styles: {"font-style": "italic"}, positionX: "30%", positionY: "7%", width: "35%", height: "10%", classes: "text bg parc-txt vert-align" },
+                { type: "Text", content: "Camille n'apprécie pas que je m'apprête, de peur que je me fasse draguer.", positionX: "30%", positionY: "7%", width: "35%", height: "10%", classes: "text bg parc-txt vert-align" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-1", effect: "fade" } }
                 ]
             },
@@ -298,42 +297,37 @@
             "appart-1": {
                 "background": { "content": "./img/5_chez_la_victime.jpg" },
                 "elements": [
-                    { type: "Text", content: "Camille : Ça s'est bien passé ta soirée ?", positionX: "25%", positionY: "3%", width: "50%", height: "30px", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Alex : Oui, c'était super ! J'ai pu parler avec pleins de gens...", positionX: "25%", positionY: "15%", width: "50%", height: "30px", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Camille : Encore pardon, je n’aurai pas dû t'embêter… Mais je t’aime, tu sais, c’est pour ça. Tu pourrais trouver tellement mieux que moi ! J’ai peur que tu m’abandonnes. Je suis rien sans toi, moi… Pour me faire pardonner, je t’ai préparé un super repas. Un plat que tu adores et j’ai rangé l’appartement... Mais vraiment, sans toi je suis rien. Je sais pas trop ce qui m’a pris. Ton ex était à la soirée, tu me l’as pas dit et pour moi, forcément c’est que tu voulais me le cacher. Je vous ai imaginé tous les deux. La prochaine fois, on pourrait y aller ensemble ?", positionX: "25%", positionY: "28%", width: "50%", height: "43%", classes: "text bg appart-txt" },
-                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2" } }
+                    { type: "Text", content: "Chez Alex <br/><br/> Camille : Ça s'est bien passé ta soirée ? <br/> Alex : Oui, c'était super ! J'ai pu parler avec pleins de gens… <br/> Camille : Encore pardon, je n’aurai pas dû t'embêter… Mais je t’aime, tu sais, c’est pour ça. Tu pourrais trouver tellement mieux que moi ! J’ai peur que tu m’abandonnes. Je suis rien sans toi, moi… Pour me faire pardonner, je t’ai préparé un super repas. Un plat que tu adores et j’ai rangé l’appartement... Mais vraiment, sans toi je suis rien. Je sais pas trop ce qui m’a pris. Ton ex était à la soirée, tu me l’as pas dit et pour moi, forcément c’est que tu voulais me le cacher. Je vous ai imaginé tous les deux. La prochaine fois, on pourrait y aller ensemble ? ", positionX: "25%", positionY: "3%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "50%", size: "18pt", target: {type: "Simple", content: "appart-2" } }
                 ]
             },
             "appart-2": {
                 "background": { "content": "./img/5_chez_la_victime.jpg" },
                 "elements": [
-                    { type: "Text", content: "Alex : C’est vraiment mignon. Oui, carrément, on pourrait faire ça. Mais... Quand on est ensemble, on est toujours collé…", positionX: "25%", positionY: "3%", width: "50%", height: "10%", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Camille : Mais c’est normal ! On est un couple. C’est normal de pas se quitter, quand on est un couple ! Tous les amoureux font ça. Ils ont leur univers à eux. J’ai besoin que tu t’investisses plus dans notre relation, enfin... si tu veux que ça marche…  Sinon, c’est que tu m’aimes pas autant que je t’aime !", positionX: "25%", positionY: "25%", width: "50%", height: "25%", classes: "text bg appart-txt" },
+                    { type: "Text", content: "Alex : C’est vraiment mignon. Oui, carrément, on pourrait faire ça. Mais... Quand on est ensemble, on est toujours collé… <br/> Camille : Mais c’est normal ! On est un couple. C’est normal de pas se quitter, quand on est un couple ! Tous les amoureux font ça. Ils ont leur univers à eux. J’ai besoin que tu t’investisses plus dans notre relation, enfin... si tu veux que ça marche…  Sinon, c’est que tu m’aimes pas autant que je t’aime ! ", positionX: "25%", positionY: "3%", width: "50%", height: "50%", classes: "text bg appart-txt" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-3" } }
                 ]
             },
             "appart-3": {
                 "background": { "content": "./img/5_chez_la_victime.jpg" },
                 "elements": [
-                    { type: "Text", content: "Alex : Mais si… Tu sais bien que je t’aime ! Mais t’as raison. Je vais faire un effort.", positionX: "25%", positionY: "10%", width: "50%", height: "10%", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Camille : En plus, j'avais passé une mauvaise journée, tu le sais !", positionX: "25%", positionY: "30%", width: "50%", height: "10%", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Alex : Mais tu as toujours des mauvaises journées... Bon... C'est fini. Viens profiter du super repas que je t'ai préparé !", positionX: "25%", positionY: "40%", width: "50%", height: "10%", classes: "text bg appart-txt" },
+                    { type: "Text", content: "Alex : Mais si… Tu sais bien que je t’aime ! Mais t’as raison. Je vais faire un effort. <br/> Camille : En plus, j'avais passé une mauvaise journée, tu le sais ! <br/> Alex : Mais tu as toujours des mauvaises journées... Bon... C'est fini. Viens profiter du super repas que je t'ai préparé ! ", positionX: "25%", positionY: "10%", width: "50%", height: "50%", classes: "text bg appart-txt" },
+
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "nuit-1", effect: "fade" } }
                 ]
             },
             "nuit-1": {
                 "background": { "content": "./img/scnuit.jpg" },
                 "elements": [
+                      { type: "Text", content: "Le lendemain...", positionX: "25%", positionY: "10%", width: "50%", height: "10%", classes: "text bg appart-txt" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2-1", effect: "fade" } }
                 ]
             },
             "appart-2-1": {
                 "background": { "content": "./img/5_chez_la_victime.jpg" },
                 "elements": [
-                    { type: "Text", content: "Le lendemain, je me réveille tôt pour étudier. Tu restes dormir tranquillement. Je t’entends râler depuis le lit. Le bruit de la vaisselle te dérange, l’odeur du café t’insupporte. Tu te lèves du mauvais pied :", positionX: "25%", positionY: "10%", width: "50%", height: "17%", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Camille : Mais reviens te coucher !", positionX: "25%", positionY: "35%", width: "50%", height: "30px", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Alex : Non, il faut que je travaille… Je te retrouve un peu plus tard. ", positionX: "25%", positionY: "48%", width: "50%", height: "10%", classes: "text bg appart-txt" },
-                    { type: "Text", content: "Camille : Mais aller ! Viens !", positionX: "25%", positionY: "68%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Text", content: "Le lendemain, je me réveille tôt pour étudier. Tu restes dormir tranquillement. Je t’entends râler depuis le lit. Le bruit de la vaisselle te dérange, l’odeur du café t’insupporte. Tu te lèves du mauvais pied : <br/> Camille : Mais reviens te coucher ! <br/> Alex : Non, il faut que je travaille… Je te retrouve un peu plus tard. <br/> Camille : Mais aller ! Viens ! ", positionX: "25%", positionY: "10%", width: "50%", height: "50%", classes: "text bg appart-txt" },
+
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2-2" } }
                 ]
             },
@@ -354,7 +348,7 @@
                     { type: "Text", ids: "typed", content: "", positionX: "25%", positionY: "15%", width: "50%", height: "30%", classes: "text bg appart-txt" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2-4"} },
                     { type: "Custom", fn: function() {
-                                                         $("#typed").typed({strings: ['"Tu fais chier avec ton café ! Je suis fatigué, putain !" J’ai peur que tu me la balances en pleine face. Je ne sais plus ce que j’ai fait de mal… Tu continues de crier, malgré mes supplications pour t’apaiser. Je m’échappe dans la salle de bain, les larmes aux yeux et là, j’entends la cafetière atterrir contre la porte… "Putain !". Tu retournes te coucher.'], typeSpeed: -100 });
+                         $("#typed").typed({strings: ['"Tu fais chier avec ton café ! Je suis fatigué, putain !" J’ai peur que tu me la balances en pleine face. Je ne sais plus ce que j’ai fait de mal… Tu continues de crier, malgré mes supplications pour t’apaiser. Je m’échappe dans la salle de bain, les larmes aux yeux et là, j’entends la cafetière atterrir contre la porte… "Putain !". Tu retournes te coucher.'], typeSpeed: -10 });
                                                      }
                     }
                 ]
@@ -369,7 +363,7 @@
             "visage": {
                 "background": { "content": "./img/scfinale.jpg" },
                 "elements": [
-                    { type: "Text", content: "Penses-tu avoir été témoin d'une scène de violence conjugale ?", positionX: "25%", positionY: "10%", width: "50%", height: "30px", classes: "text bg visage-txt" },
+                    { type: "Text", content: "Penses-tu avoir été témoin d'une scène de violence conjugale ?", positionX: "25%", positionY: "10%", width: "50%", height: "30px", size: "18pt", classes: "text bg visage-txt" },
                     { type: "Button", content: "Oui", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "final", effect: "fade" } },
                     { type: "Button", content: "Non", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "final", effect: "fade" } }
                 ]
@@ -377,7 +371,7 @@
             "final": {
                 "background": { "content": "./img/scfinale.jpg" },
                 "elements": [
-                    { type: "Text", content: "La violence ne commence pas au premier coup, elle prend racine de manière invisible.", positionX: "25%", positionY: "5%", width: "50%", height: "30px", classes: "text bg visage-txt", alignment: "center" },
+                    { type: "Text", content: "La violence ne commence pas au premier coup, elle prend racine de manière invisible.", positionX: "25%", positionY: "5%", width: "50%", height: "30px", size: "18pt", classes: "text bg visage-txt", alignment: "center" },
                     { type: "Text", content: "Vous en avez été le témoin.", positionX: "25%", positionY: "40%", size: "24pt", width: "50%", height: "30px", classes: "text bg visage-txt", alignment: "center", styles: {opacity: 0}, ids: "appear" },
                 { type: "Custom", fn: function() {
                     setTimeout(function() {
@@ -439,7 +433,7 @@
         }
 
         $(function() {
-            render("city-1");
+            render("accueil");
         });
 
     </script>
