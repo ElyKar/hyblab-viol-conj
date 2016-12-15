@@ -43,7 +43,7 @@
                 switch(element.type) {
                     case "Text":
                         var div = $("<p></p>");
-                        if (element.content) { div.text(element.content)}
+                        if (element.content) { div.html(element.content)}
                         div.css("position", "absolute");
                         div.css("width", "100%");
                         div.css("height", "100%");
@@ -341,7 +341,7 @@
                     { type: "Text", ids: "typed", content: "", positionX: "25%", positionY: "15%", width: "50%", height: "30%", classes: "text bg appart-txt" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2-4"} },
                     { type: "Custom", fn: function() {
-                         $("#typed").typed({strings: ['"Tu fais chier avec ton café ! Je suis fatigué, putain !" J’ai peur que tu me la balances en pleine face. Je ne sais plus ce que j’ai fait de mal… Tu continues de crier, malgré mes supplications pour t’apaiser. Je m’échappe dans la salle de bain, les larmes aux yeux et là, j’entends la cafetière atterrir contre la porte… "Putain !". Tu retournes te coucher.'], typeSpeed: -10 });
+                                                         $("#typed").typed({strings: ['"Tu fais chier avec ton café ! Je suis fatigué, putain !" J’ai peur que tu me la balances en pleine face. Je ne sais plus ce que j’ai fait de mal… Tu continues de crier, malgré mes supplications pour t’apaiser. Je m’échappe dans la salle de bain, les larmes aux yeux et là, j’entends la cafetière atterrir contre la porte… "Putain !". Tu retournes te coucher.'], typeSpeed: -100 });
                                                      }
                     }
                 ]
