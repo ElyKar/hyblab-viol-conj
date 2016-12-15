@@ -29,14 +29,14 @@ p {
 
 .btn {
     text-align: center;
-    text-color: #333;
-    background-color: #999;
+    text-color: #FFFFFF;
+    background-color: #188F84;
     border-radius: 8px;
-    border: 2px solid #00ff36
+    border: 2px solid #026666;
 }
 
 .btn:hover {
-    background-color: #00ff36;
+    background-color: #026666;
     cursor: pointer;
 }
 
