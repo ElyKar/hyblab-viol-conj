@@ -19,11 +19,13 @@
             // Render background
             panel = data[tag];
             if (fade) {
-                $("body").fadeTo('slow', 0.3, function() {
-                    $("body").css("background-image", "url('"+panel.background.content+"')");
-                }).fadeTo("slow", 1);
+                $("body").fadeTo('slow', 0, function() {
+                    $("#background").attr("src", panel.background.content);
+                }).fadeTo("slow", 1, function() {
+                    $("#content").fadeTo('slow', 1);
+                });
             } else {
-                $("body").css("background-image", "url('"+panel.background.content+"')");
+                $("#background").attr("src", panel.background.content);
             }
 
             if ("styles" in panel.background) {
@@ -97,9 +99,8 @@
                         if ("effect" in target && target.effect == "fade") {
                             fn = function() {
                                 fade = true;
-                                $("html").css("opacity", 0);
+                                $("#content").css("opacity", 0);
                                 render(next);
-                                $("html").fadeTo('slow', 1);
                                 fade = false;
                             }
                         } else {
@@ -118,7 +119,8 @@
             });
         }
 
-        var data = {   "panel-1-1": {
+/*
+        var data = {"panel-1-1": {
             "background": { "content": "img/carterennes.png" },
                             "elements": [
                             { type: "Text", ids: "typed", alignment: "left", size: "18pt", content: "", positionX: "29%", positionY: "30%", width: "40%", height: "40%", classes: "text bg", styles: {"margin-left": "5px", "margin-right": "5px" } },
@@ -145,6 +147,128 @@
          { type: "Custom", fn: function() { $("#typed").typed({strings: ["Mais on fait attention, on veut garder notre indépendance. On se voit quelques jours par semaine, un coup chez toi, un coup chez moi. Je fais des soirées avec mes amis pendant que tu vois les tiens. Comme tous les couples, les soirées de Binge Watching se multiplient, on a arrêté les séries qu’on regardait de notre côté et on a choisi celles qui nous plaisaient à nous deux."], typeSpeed: 0})}}
                     ]
                 }
+        }
+*/
+
+        var data = {
+            "accueil": {
+                "background": { "content": "./img/scaccueil.jpg" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", effect: "fade", content: "city-1" } }
+                ]
+            },
+            "city-1": {
+                "background": { "content": "./img/carterennes.png" },
+                // NARRATION ICI
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "bar-1", effect: "fade" } }
+                ]
+            },
+            "bar-1": {
+                "background": { "content": "./img/fondsc2.jpg" },
+                "elements": [
+                    { type: "Button", content: "GOT", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "bar-got" } },
+                    { type: "Button", content: "PuB", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "bar-pub" } }
+                ]
+            },
+            "bar-got": {
+                "background": { "content": "./img/fondsc2.jpg" },
+                "elements": [
+                    { type: "Button", content: "Rep1", positionX: "25%", positionY: "61%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } },
+                    { type: "Button", content: "Rep2", positionX: "25%", positionY: "76%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } }
+                ]
+            },
+            "bar-pub": {
+                "background": { "content": "./img/fondsc2.jpg" },
+                "elements": [
+                    { type: "Button", content: "Rep1", positionX: "25%", positionY: "61%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } },
+                    { type: "Button", content: "Rep2", positionX: "25%", positionY: "76%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-1", effect: "fade" } }
+                ]
+            },
+            "parc-1": {
+                "background": { "content": "./img/parc.jpg" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "parc-2"} }
+                ]
+            },
+            "parc-2": {
+                "background": { "content": "./img/parc.jpg" },
+                "elements": [
+                    { type: "Button", content: "Rep1", positionX: "25%", positionY: "61%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-rep1"} },
+                    { type: "Button", content: "Rep2", positionX: "25%", positionY: "76%", width: "50%", height: "10%", size: "18pt", target: {type: "Simple", content: "parc-rep2"} }
+                ]
+            },
+            "parc-rep1": {
+                "background": { "content": "./img/parc.jpg" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-1", effect: "fade" } }
+                ]
+            },
+            "parc-rep2": {
+                "background": { "content": "./img/parc.jpg" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-1", effect: "fade" } }
+                ]
+            },
+            "soiree-1": {
+                "background": { "content": "./img/party.jpg" },
+                "elements": [
+                    { type: "Button", content: "Tu me manques", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Button", content: "Ne pas répondre", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-2" } }
+                ]
+            },
+            "soiree-2": {
+                "background": { "content": "./img/party.jpg" },
+                "elements": [
+                    { type: "Button", content: "Je pars", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Button", content: "Je reste", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-3" } }
+                ]
+            },
+            "soiree-3": {
+                "background": { "content": "./img/party.jpg" },
+                "elements": [
+                    { type: "Button", content: "Je pars", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Button", content: "Je reste", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-4" } }
+                ]
+            },
+            "soiree-4": {
+                "background": { "content": "./img/party.jpg" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } }
+                ]
+            },
+            "appart-1": {
+                "background": { "content": "./img/5_chez_la_victime.jpg" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "nuit-1", effect: "fade" } }
+                ]
+            },
+            "nuit-1": {
+                "background": { "content": "./img/scnuit.jpg" },
+                "elements": [
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart2-1", effect: "fade" } }
+                ]
+            },
+            "appart2-1": {
+                "background": { "content": "./img/5_chez_la_victime.jpg" },
+                "elements": [
+                    { type: "Button", content: "Je pars", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "visage", effect: "fade" } },
+                    { type: "Button", content: "Je reste", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "visage", effect: "fade" } }
+                ]
+            },
+            "visage": {
+                "background": { "content": "./img/scfinale.jpg" },
+                "elements": [
+                    { type: "Button", content: "Oui", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "final", effect: "fade" } },
+                    { type: "Button", content: "Non", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "final", effect: "fade" } }
+                ]
+            },
+            "final": {
+                "background": { "content": "./img/scfinale.jpg" },
+                "elements": [
+                    { type: "Button", content: "Fin", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "end" } }
+                ]
+            }
         }
 
         $(function() {
