@@ -133,7 +133,7 @@
                     { type: "Button", content: "Suite", positionX: "42%", positionY: "81%", width: "16%", height: "30px", classes: "city-btn", size: "18pt", target: {type: "Simple", content: "city-2" } },
                     {type: "Text", content: "", positionX: "15%", positionY: "15%", width: "30%", height: "40%", classes: "text bg city-txt", ids: "typed"},
                     {type: "Custom", fn: function() {
-                        $("#typed").typed({strings: ["J’avais hésité à venir à cette soirée.\nJe venais d’arriver à Rennes pour ma première année aux Beaux Arts. Je viens de Saint-Malo, mes amis sont restés là-bas, mes parents aussi.\nÀ Rennes, je ne connaissais personne, j’avais besoin de rencontrer du monde..."], typeSpeed: 0});
+                        $("#typed").typed({strings: ["J’avais hésité à venir à cette soirée.\nJe venais d’arriver à Rennes pour ma première année aux Beaux Arts. Je viens de Saint-Malo, mes amis sont restés là-bas, mes parents aussi.\nÀ Rennes, je ne connaissais personne, j’avais besoin de rencontrer du monde..."], typeSpeed: -100});
                                                     }
                     }
                 ]
@@ -219,20 +219,44 @@
             "soiree-1": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
-                    { type: "Button", content: "Tu me manques", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    {type: "Image", positionX: "20%", positionY: "10%", src: "./img/text-1.png", width: "22%", height: "20%" },
+                    { type: "Button", content: "Toi aussi", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-2bis" } },
                     { type: "Button", content: "Ne pas répondre", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-2" } }
                 ]
             },
             "soiree-2": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
+                    {type: "Image", positionX: "20%", positionY: "10%", src: "./img/text-1.png", width: "22%", height: "20%" },
+                    {type: "Image", ids: "sms2", styles: {opacity: 0}, positionX: "20%", positionY: "47%", src: "./img/text-3.png", width: "22%", height: "30%" },
                     { type: "Button", content: "Je pars", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
-                    { type: "Button", content: "Je reste", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-3" } }
+                    { type: "Button", content: "Je reste", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-3" } },
+                    { type: "Custom", fn: function() {
+                        setTimeout(function() {
+                            $("#sms2").css("opacity", 1);
+                        }, 1500);
+                                                     }}
+                ]
+            },
+            "soiree-2bis": {
+                "background": { "content": "./img/party.jpg" },
+                "elements": [
+                    {type: "Image", positionX: "20%", positionY: "10%", src: "./img/text-1.png", width: "22%", height: "20%" },
+                    {type: "Image", positionX: "58%", positionY: "31%", src: "./img/text-2.png", width: "22%", height: "20%" },
+                    {type: "Image", ids: "sms2", styles: {opacity: 0}, positionX: "20%", positionY: "47%", src: "./img/text-3.png", width: "22%", height: "30%" },
+                    { type: "Button", content: "Je pars", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Button", content: "Je reste", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-3" } },
+                    { type: "Custom", fn: function() {
+                        setTimeout(function() {
+                            $("#sms2").css("opacity", 1);
+                        }, 1500);
+                                                     }}
                 ]
             },
             "soiree-3": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
+                    {type: "Image", positionX: "20%", positionY: "20%", src: "./img/text-4.png", width: "22%", height: "20%" },
                     { type: "Button", content: "Je pars", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
                     { type: "Button", content: "Je reste", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-4" } }
                 ]
@@ -240,8 +264,22 @@
             "soiree-4": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
-                    // Image du téléphone avec les textos
-                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } }
+                {type: "Image", positionX: "40%", positionY: "10%", src: "./img/text-5.png", width: "22%", height: "20%", styles: {opacity: 0}, ids: "sms1"},
+                {type: "Image", positionX: "40%", positionY: "31%", src: "./img/text-6.png", width: "22%", height: "20%",styles: {opacity: 0},  ids: "sms2" },
+                {type: "Image", positionX: "40%", positionY: "52%", src: "./img/text-7.png", width: "22%", height: "20%", styles: {opacity: 0}, ids: "sms3" },
+                { type: "Button", ids: "btnGo", styles: { opacity: 0}, content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Custom", fn: function() {
+                        setTimeout(function() {
+                            $("#sms1").css("opacity", 1);
+                            setTimeout(function() {
+                                $("#sms2").css("opacity", 1);
+                                setTimeout(function() {
+                                    $("#sms3").css("opacity", 1);
+                                    $("#btnGo").css("opacity", 1);
+                                }, 1500)
+                            }, 1000)
+                        }, 500);
+                                                     }}
                 ]
             },
             "appart-1": {
@@ -327,6 +365,11 @@
                 "background": { "content": "./img/scfinale.jpg" },
                 "elements": [
                     { type: "Button", content: "Fin", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "end" } }
+                ]
+            },
+            "end": {
+                "background": { "content": "./img/credits.jpg" },
+                "elements": [
                 ]
             }
         }
