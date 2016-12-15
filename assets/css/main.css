@@ -1,4 +1,10 @@
+@font-face {
+    font-family: "Dosis";
+    src: url("Dosis-Medium.ttf");
+}
+
 body {
+    font-family: "Dosis";
     background: no-repeat center center fixed;
     background-size: cover;
     position: fixed;
