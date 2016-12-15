@@ -244,39 +244,60 @@
                 "background": { "content": "./img/parc.jpg" },
                 "elements": [
                 { type: "Text", content: "- Ok, c'est bien c'est pas trop sexy.", positionX: "30%", positionY: "7%", width: "35%", height: "10%", classes: "text bg parc-txt vert-align" },
-                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-1", effect: "fade" } }
+                    { type: "Button", content: "Suite", classes: "parc-btn", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-1", effect: "fade" } }
                 ]
             },
             "soiree-1": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
-                    { type: "Button", content: "Tu me manques", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
-                    { type: "Button", content: "Ne pas répondre", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-2" } }
+                    { type: "Button", content: "Tu me manques", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Button", content: "Ne pas répondre", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-2" } }
                 ]
             },
             "soiree-2": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
-                    { type: "Button", content: "Je pars", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
-                    { type: "Button", content: "Je reste", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-3" } }
+                    { type: "Button", content: "Je pars", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Button", content: "Je reste", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-3" } }
                 ]
             },
             "soiree-3": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
-                    { type: "Button", content: "Je pars", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
-                    { type: "Button", content: "Je reste", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-4" } }
+                    { type: "Button", content: "Je pars", classes: "soiree-btn", positionX: "20%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } },
+                    { type: "Button", content: "Je reste", classes: "soiree-btn", positionX: "60%", positionY: "81%", width: "20%", height: "30px", size: "18pt", target: {type: "Simple", content: "soiree-4" } }
                 ]
             },
             "soiree-4": {
                 "background": { "content": "./img/party.jpg" },
                 "elements": [
+                    // Image du téléphone avec les textos
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-1", effect: "fade" } }
                 ]
             },
             "appart-1": {
                 "background": { "content": "./img/5_chez_la_victime.jpg" },
                 "elements": [
+                    { type: "Text", content: "- Ça s'est bien passé ta soirée ?", positionX: "25%", positionY: "3%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- Oui c'était super ! J'ai pu parler avec plein de gens...", positionX: "25%", positionY: "15%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- Pardon, je n’aurais pas dû t'embêter… Mais je t’aime, tu sais, c’est pour ça. Tu pourrais trouver tellement mieux que moi, j’ai peur que tu m’abandonnes. Je suis rien sans toi, moi… Pour me faire pardonner, je t’ai préparé un super repas. Un plat que tu adores, et j’ai rangé l’appartement... Mais vraiment, sans toi je suis rien. Je sais pas trop ce qui m’a pris. Ton ex était à la soirée, tu me l’as pas dit et pour moi, forcément c’est que tu voulais me le cacher. Je vous ai imaginé ensemble. La prochaine fois, on pourrait y aller ensemble ?", positionX: "25%", positionY: "28%", width: "50%", height: "40%", classes: "text bg appart-txt" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2" } }
+                ]
+            },
+            "appart-2": {
+                "background": { "content": "./img/5_chez_la_victime.jpg" },
+                "elements": [
+                    { type: "Text", content: "- C’est vraiment mignon. Oui carrément, on pourrait faire ça. Mais... Quand on est ensemble, on est toujours collé…", positionX: "25%", positionY: "3%", width: "50%", height: "10%", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- Mais c’est normal ! On est un couple. C’est normal de pas se quitter, quand on est un couple ! Tous les amoureux font ça, ils ont leur univers à eux… J’ai besoin que tu t’investisses plus dans notre relation, si tu veux que ça marche ! Sinon, c’est que tu m’aimes pas autant que je t’aime...", positionX: "25%", positionY: "25%", width: "50%", height: "25%", classes: "text bg appart-txt" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-3" } }
+                ]
+            },
+            "appart-3": {
+                "background": { "content": "./img/5_chez_la_victime.jpg" },
+                "elements": [
+                    { type: "Text", content: "- Mais si, je t’aime ! T’as raison. Je vais faire un effort.", positionX: "25%", positionY: "10%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- En plus j'avais passé une mauvaise journée, tu le sais !", positionX: "25%", positionY: "25%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- Mais tu as toujours des mauvaises journées... Bon c'est fini, viens profiter du super repas que je t'ai préparé !", positionX: "25%", positionY: "40%", width: "50%", height: "10%", classes: "text bg appart-txt" },
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "nuit-1", effect: "fade" } }
                 ]
             },
@@ -286,7 +307,39 @@
                     { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart2-1", effect: "fade" } }
                 ]
             },
-            "appart2-1": {
+            "appart-2-1": {
+                "background": { "content": "./img/5_chez_la_victime.jpg" },
+                "elements": [
+                    { type: "Text", content: "Le lendemain, je me réveille tôt pour étudier. Tu restes dormir tranquillement. Je t’entends râler depuis le lit. Le bruit de la vaisselle te dérange, l’odeur du café t’insupporte. Tu te lèves du mauvais pied :", positionX: "25%", positionY: "10%", width: "50%", height: "17%", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- Mais reviens te coucher...", positionX: "25%", positionY: "35%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- Non, il faut que je travaille… Je te retrouve un peu plus tard. ", positionX: "25%", positionY: "48%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Text", content: "- Mais aller ! Viens...", positionX: "25%", positionY: "61%", width: "50%", height: "30px", classes: "text bg appart-txt" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2-2" } }
+                ]
+            },
+            "appart-2-2": {
+                "background": { "content": "./img/5_chez_la_victime.jpg" },
+                "elements": [
+                    { type: "Text", ids: "typed", content: "", positionX: "25%", positionY: "15%", width: "50%", height: "30%", classes: "text bg appart-txt" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2-3" } },
+                    { type: "Custom", fn: function() {
+                         $("#typed").typed({strings: ["Tu commences à glisser tes mains en dessous de mon tee-shirt… J’essaie de me dégager. J’insiste : il ne faut pas que je cède cette fois-ci. Tu comprends que je ne céderai pas. Je me retourne et je te regarde. Tes traits, je n’avais jamais vu autant d’agressivité sur ton visage ! Pour la première fois, tu me fais peur. Tu hurles, tu enrages. Je ne te reconnais plus. D’un coup, tu agrippes la cafetière."], typeSpeed: 15 });
+                                                     }
+                    }
+                ]
+            },
+            "appart-2-3": {
+                "background": { "content": "./img/5_chez_la_victime.jpg" },
+                "elements": [
+                    { type: "Text", ids: "typed", content: "", positionX: "25%", positionY: "15%", width: "50%", height: "30%", classes: "text bg appart-txt" },
+                    { type: "Button", content: "Suite", positionX: "46%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "appart-2-4"} },
+                    { type: "Custom", fn: function() {
+                         $("#typed").typed({strings: ['"Tu fais chier avec ton café ! Je suis fatigué, putain !" J’ai peur que tu me la balances en pleine face. Je ne sais plus ce que j’ai fait de mal… Tu continues de crier, malgré mes supplications pour t’apaiser. Je m’enfuis dans la salle de bain, les larmes aux yeux et là, j’entends la cafetière atterrir contre la porte… "Putain". Tu retournes te coucher.'], typeSpeed: 15 });
+                                                     }
+                    }
+                ]
+            },
+            "appart-2-4": {
                 "background": { "content": "./img/5_chez_la_victime.jpg" },
                 "elements": [
                     { type: "Button", content: "Je pars", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "visage", effect: "fade" } },
@@ -296,6 +349,7 @@
             "visage": {
                 "background": { "content": "./img/scfinale.jpg" },
                 "elements": [
+                    { type: "Text", content: "Penses-tu avoir été témoin d'une scène de violence conjugale ?", positionX: "25%", positionY: "10%", width: "50%", height: "30px", classes: "text bg appart-txt" },
                     { type: "Button", content: "Oui", positionX: "25%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "final", effect: "fade" } },
                     { type: "Button", content: "Non", positionX: "68%", positionY: "81%", width: "80px", height: "30px", size: "18pt", target: {type: "Simple", content: "final", effect: "fade" } }
                 ]
@@ -309,7 +363,7 @@
         }
 
         $(function() {
-            render("parc-1");
+            render("visage");
         });
 
     </script>
